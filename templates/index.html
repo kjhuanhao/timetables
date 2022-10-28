@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ {% extends "base.html" %}
+ {% block title %}<title>个人课表查询系统</title>{% endblock %}
+{% block body %}
+
+<div>
+    <h4>你好同学!这是所有周次的课表</h4>
+    <table class="table" >
+        <thead class="thead-dark">
+        <!-- 表头 -->
+        <tr>
+            <th>周次</th>
+            <th>星期</th>
+            <th>课程</th>
+            <th>授课老师</th>
+            <th>地点</th>
+            <th>第几节</th>
+            <th>日期</th>
+
+        </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <!-- 表格 -->
+                <tr>
+                    <td >{{ result[0]}}</td>
+                    <td>{{ result[1]}}</td>
+                    <td>{{ result[2]}}</td>
+                    <td>{{ result[3] }}</td>
+                    <td>{{ result[4] }}</td>
+                    <td>{{ result[5] }}</td>
+                    <td>{{ result[6] }}</td>
+
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+
+</html>
